@@ -1,0 +1,128 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+'''
+Reception des données émise par un Arduino branché
+à un port USB.
+'''
+
+import serial
+import serial.tools.list_ports
+import matplotlib.pyplot as plt
+import numpy as np 
+import pygame
+import math
+import sys
+A=np.array([[0,0,0]])
+B=np.zeros((181,2))
+taillex=1920
+tailley=1080
+size=4
+screen = pygame.display.set_mode((taillex, tailley))
+n=10
+Mx=0
+My=0
+i=0
+a=0
+k=0
+
+
+def distance(x1,x2,y1,y2):
+    dist=math.sqrt((x2-x1)**2+(y2-y1)**2)
+    return dist
+
+
+print("Recherche d'un port serie...")
+
+ports = serial.tools.list_ports.comports(include_links=False)
+
+if (len(ports) != 0): # on a trouvé au moins un port actif
+
+    if (len(ports) > 1):     # affichage du nombre de ports trouvés
+        print (str(len(ports)) + " ports actifs ont ete trouves:") 
+    else:
+        print ("1 port actif a ete trouve:")
+
+    ligne = 1
+
+    for port in ports :  # affichage du nom de chaque port
+        print(str(ligne) + ' : ' + port.device)
+        ligne = ligne + 1
+
+    portChoisi = 2
+
+    print('1: 9600   2: 38400    3: 115200')
+
+    baud = 115200
+    """"
+
+    if (baud == 1):
+        baud = 9600
+    if (baud == 2):
+        baud = 38400
+    if (baud == 3):
+        baud = 115200
+    """
+
+    # on établit la communication série
+    arduino = serial.Serial(ports[int(portChoisi) -1  ].device, baud,timeout=0.5)
+    
+    print('Connexion a ' + arduino.name + ' a un baud rate de ' + str(baud))
+
+    # si on reçoit un message, on l'affiche
+    while True:
+        data = arduino.readline().decode('ascii').rstrip()
+        print(data)
+      
+        
+        
+        if len(data) > 0:
+
+            datasplit=data.split(' , ') 
+            if len(datasplit)==2 and (datasplit!=" " ):
+                angle=int(datasplit[0])
+                distance=float(datasplit[1])
+                x=distance*math.cos(angle*(math.pi/180))
+                y=distance*math.sin(angle*(math.pi/180))
+            
+                
+            # A=np.r_[A,([x,y])] 
+            
+        #     print(A)
+        # #     
+        #     
+            
+            # if x-A[i][0] < y-A[i][1]:
+            #     x=A[i][0]
+            #     y=distance*math.sin(angle*(math.pi/180))
+            # else :
+            #     y= A[i][1]
+            #     x=distance*math.cos(angle*(math.pi/180))
+
+                B[angle][0]=x
+                B[angle][1]=y
+                if (angle==180 or angle==0):
+                    screen.fill("black")
+                    
+
+                #print (B)
+                #i=i+1
+                #A=np.r_[A,[[x,y]]]
+                pygame.draw.circle(screen, "red",(taillex/2+B[angle][0]*5,tailley/2-B[angle][1]*5+200),size,0)
+                pygame.display.flip()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+                sys.exit()
+
+            
+else: # on n'a pas trouvé de port actif
+    print("Aucun port actif n'a ete trouve")
+
+
+
+
+
+
+
