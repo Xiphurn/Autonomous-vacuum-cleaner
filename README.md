@@ -25,8 +25,8 @@ The main goal of this repostery is to show and follow the progress of the constr
 - Design the vacuum cleaner housing
 - Path finding algorithm 
 - Work on the suction system
-- work on the movement system
-- work on the obstacle avoidance system
+- Work on the movement system
+- Work on the obstacle avoidance system
 
 
 # Ideas to explore
