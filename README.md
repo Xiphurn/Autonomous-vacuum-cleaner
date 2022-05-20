@@ -27,3 +27,4 @@ The main goal of this repostery is to show and follow the progress of the constr
 
 
 # Ideas to explore
+- Try to use an analog Hall Effect Sensor to define the stubborn instead of a pushbutton
