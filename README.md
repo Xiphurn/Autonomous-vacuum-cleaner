@@ -23,4 +23,4 @@ The main goal of this repostery is to show and follow the progress of the constr
   
 # Next steps 
 
-#Ideas to explore
+# Ideas to explore
