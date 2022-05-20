@@ -14,6 +14,7 @@ The main goal of this repostery is to show and follow the progress of the constr
 - Arduino IDE 
 - SolidWorks 
 - Cura
+- Fusion 360
 
 # Work that we have done until now: 
 - Work on the navigation system (2D mapping)
