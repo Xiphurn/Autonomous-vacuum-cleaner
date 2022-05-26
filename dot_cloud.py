@@ -50,18 +50,7 @@ if (len(ports) != 0): # at least one port was found
 
     portChoisi = 2
 
-    print('1: 9600   2: 38400    3: 115200')
-
     baud = 115200
-    """"
-
-    if (baud == 1):
-        baud = 9600
-    if (baud == 2):
-        baud = 38400
-    if (baud == 3):
-        baud = 115200
-    """
 
     # Establishing serial communication
     arduino = serial.Serial(ports[int(portChoisi) -1  ].device, baud,timeout=0.5)
