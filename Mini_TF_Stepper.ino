@@ -31,10 +31,10 @@ float getdistance()  //Function that allows to get the measured distance from th
           uart[1] = HEADER;
           for (i = 2; i < 9; i++) //save data in array
           {
-            uart[i] = Serial1.read(); //Reads the data from the LIDAR and saves it in a "Tableau"
+            uart[i] = Serial1.read(); //Reads the data from the LIDAR and saves it in an array
           }
           check = uart[0] + uart[1] + uart[2] + uart[3] + uart[4] + uart[5] + uart[6] + uart[7];
-          if (uart[8] == (check & 0xff))//verify the received data as per protocol
+          if (uart[8] == (check & 0xff))//verify the data received is conform to the protocol
           {
             distance =  uart[2] + uart[3] * 256;  //calculate distance value
             
@@ -51,7 +51,7 @@ float getdistance()  //Function that allows to get the measured distance from th
 void setup()
 {
   Serial.begin(115200); //set bit rate of serial port connecting Arduino with computer
-  Serial1.begin(115200);  //set bit rate of serial port connecting LiDAR with Arduin
+  Serial1.begin(115200);  //set bit rate of serial port connecting LiDAR with Arduino
   myStepper.setSpeed(9);  //set the motor speed
 }
 
