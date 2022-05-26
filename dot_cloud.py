@@ -26,11 +26,6 @@ a=0
 k=0
 
 
-def distance(x1,x2,y1,y2):
-    dist=math.sqrt((x2-x1)**2+(y2-y1)**2)
-    return dist
-
-
 print("Recherche d'un port serie...")
 
 ports = serial.tools.list_ports.comports(include_links=False)
@@ -73,29 +68,13 @@ if (len(ports) != 0): # at least one port was found
                 x=distance*math.cos(angle*(math.pi/180))
                 y=distance*math.sin(angle*(math.pi/180))
             
-                
-            # A=np.r_[A,([x,y])] 
-            
-        #     print(A)
-        # #     
-        #     
-            
-            # if x-A[i][0] < y-A[i][1]:
-            #     x=A[i][0]
-            #     y=distance*math.sin(angle*(math.pi/180))
-            # else :
-            #     y= A[i][1]
-            #     x=distance*math.cos(angle*(math.pi/180))
-
                 B[angle][0]=x
                 B[angle][1]=y
                 if (angle==180 or angle==0):
                     screen.fill("black")
                     
-
                 #print (B)
-                #i=i+1
-                #A=np.r_[A,[[x,y]]]
+
                 pygame.draw.circle(screen, "red",(taillex/2+B[angle][0]*5,tailley/2-B[angle][1]*5+200),size,0)
                 pygame.display.flip()
 
