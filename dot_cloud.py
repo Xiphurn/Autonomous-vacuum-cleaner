@@ -12,18 +12,11 @@ import numpy as np
 import pygame
 import math
 import sys
-A=np.array([[0,0,0]])
 B=np.zeros((181,2))
 taillex=1920
 tailley=1080
 size=4
 screen = pygame.display.set_mode((taillex, tailley))
-n=10
-Mx=0
-My=0
-i=0
-a=0
-k=0
 
 
 print("Recherche d'un port serie...")
@@ -86,10 +79,4 @@ if (len(ports) != 0): # at least one port was found
             
 else: # on n'a pas trouvé de port actif
     print("Aucun port actif n'a ete trouve")
-
-
-
-
-
-
 
