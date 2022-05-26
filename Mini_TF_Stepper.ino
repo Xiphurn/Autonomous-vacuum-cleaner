@@ -29,12 +29,12 @@ float getdistance()  //Function that allows to get the measured distance from th
         if (Serial1.read() == HEADER) //assess data package frame header 0x59
         {
           uart[1] = HEADER;
-          for (i = 2; i < 9; i++) //save data in array
+          for (i = 2; i < 9; i++) //save data in an array
           {
-            uart[i] = Serial1.read(); //Reads the data from the LIDAR and saves it in an array
+            uart[i] = Serial1.read(); //reads the data from the array
           }
           check = uart[0] + uart[1] + uart[2] + uart[3] + uart[4] + uart[5] + uart[6] + uart[7];
-          if (uart[8] == (check & 0xff))//verify the data received is conform to the protocol
+          if (uart[8] == (check & 0xff))//check if the data received is conform to the protocol
           {
             distance =  uart[2] + uart[3] * 256;  //calculate distance value
             
@@ -61,7 +61,7 @@ void loop()
   j=1;
   while (j<181) //allows to send the data for each angle from 0 degrees to 180 degrees
     {
-    myStepper.step(5.688); //move the stepmotor 1 degree
+    myStepper.step(5.688); //move the stepmotor by 1 degree
     somme = 0; //reset the sum value
     
     for (k=0 ; k<10 ; k++) ////adds 10 measurements to calculate the average later 
@@ -82,7 +82,7 @@ void loop()
   j=179;
   while (j>-1) //allows to send the data for each angle from 180 degrees to 0 degrees
     {
-      myStepper.step(-5.688); //move the stepmotor 1 degree in the other direction 
+      myStepper.step(-5.688); //move the stepmotor by 1 degree in the other direction 
       somme = 0; //reset the sum value
       
       for (k=0 ; k<10 ; k++) //adds 10 measurements to calculate the average later 
