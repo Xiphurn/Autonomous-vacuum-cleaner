@@ -7,7 +7,6 @@ Receiving data from Arduino via USB
 
 import serial
 import serial.tools.list_ports
-import matplotlib.pyplot as plt
 import numpy as np 
 import pygame
 import math
