@@ -23,8 +23,8 @@ The main goal of this repostery is to show and follow the progress of the constr
   At first, we used an ultrasonic sensor and a servo motor. We soon realized that the ultrasonic sensor wasn't precise enough, so we decide to go with a LIDAR     sensor. The results were better but it seems like the servo motor wasn't providing us the smoothness that we needed, so we decide to use a stepper motor wich   is very precise but need a stubborn to define his position. We are currently working on this stubborn, and we are also studying the posibilitie of using a       gyroscope to enslave the stepper motor (WORK IN PROGRESS) 
   
   Equations :
-  x=distance*cos(angle*pi/180)
-  y=distance*sin(angle*pi/180)
+  - x=distance*cos(angle*pi/180)
+  - y=distance*sin(angle*pi/180)
   
 # Results:
 
