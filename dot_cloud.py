@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-Reception des données émise par un Arduino branché
-à un port USB.
+Receiving data from Arduino via USB 
 '''
 
 import serial
@@ -36,9 +35,9 @@ print("Recherche d'un port serie...")
 
 ports = serial.tools.list_ports.comports(include_links=False)
 
-if (len(ports) != 0): # on a trouvé au moins un port actif
+if (len(ports) != 0): # at least one port was found
 
-    if (len(ports) > 1):     # affichage du nombre de ports trouvés
+    if (len(ports) > 1):     # printing number of active ports
         print (str(len(ports)) + " ports actifs ont ete trouves:") 
     else:
         print ("1 port actif a ete trouve:")
@@ -64,7 +63,7 @@ if (len(ports) != 0): # on a trouvé au moins un port actif
         baud = 115200
     """
 
-    # on établit la communication série
+    # Establishing serial communication
     arduino = serial.Serial(ports[int(portChoisi) -1  ].device, baud,timeout=0.5)
     
     print('Connexion a ' + arduino.name + ' a un baud rate de ' + str(baud))
