@@ -59,17 +59,17 @@ if (len(ports) != 0):   # at least one port was found
                 x=distance*math.cos(angle*(math.pi/180))    # calculating cartesian coordinates
                 y=distance*math.sin(angle*(math.pi/180))
             
-                B[angle][0]=x
+                B[angle][0]=x       # assigning the coordinates into a numpy array for the corresponding angle
                 B[angle][1]=y
-                if (angle==180 or angle==0):    #resesting the screen once a full scan has been made
+                if (angle==180 or angle==0):    # resesting the screen once a full scan has been made
                     screen.fill("black")
                     
-                #print (B)
+                #print (B)   # for testing purposes
 
-                pygame.draw.circle(screen, "red",(taillex/2+B[angle][0]*5,tailley/2-B[angle][1]*5+200),size,0)
+                pygame.draw.circle(screen, "red",(taillex/2+B[angle][0]*5,tailley/2-B[angle][1]*5+200),size,0)   # displaying the cartography via pygame
                 pygame.display.flip()
 
-        for event in pygame.event.get():
+        for event in pygame.event.get():    # quitting pygame interface
             if event.type == pygame.QUIT:
                 running = False
                 sys.exit()
