@@ -36,7 +36,6 @@ if (len(ports) != 0):   # at least one port was found
         ligne = ligne + 1
 
     portChoisi = 2
-
     baud = 115200
 
     # Establishing serial connection 
@@ -44,11 +43,11 @@ if (len(ports) != 0):   # at least one port was found
     
     print('Connection to ' + arduino.name + ' at ' + str(baud) + ' baud was succesful! ')
 
+    
     # printing decoded data if received
     while True:
         data = arduino.readline().decode('ascii').rstrip() 
         print(data)
-      
         
         if len(data) > 0:
 
