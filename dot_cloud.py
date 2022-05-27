@@ -18,20 +18,20 @@ size=4
 screen = pygame.display.set_mode((taillex, tailley))
 
 
-print("Recherche d'un port serie...")
+print("Looking for a serial port...")
 
 ports = serial.tools.list_ports.comports(include_links=False)
 
-if (len(ports) != 0): # at least one port was found
+if (len(ports) != 0):   # at least one port was found
 
-    if (len(ports) > 1):     # printing number of active ports
-        print (str(len(ports)) + " ports actifs ont ete trouves:") 
+    if (len(ports) > 1):    # printing number of active ports
+        print (str(len(ports)) + " ports were found:") 
     else:
-        print ("1 port actif a ete trouve:")
+        print ("1 port was found:")
 
     ligne = 1
 
-    for port in ports :  # affichage du nom de chaque port
+    for port in ports :    # printing port name
         print(str(ligne) + ' : ' + port.device)
         ligne = ligne + 1
 
@@ -39,30 +39,29 @@ if (len(ports) != 0): # at least one port was found
 
     baud = 115200
 
-    # Establishing serial communication
+    # Establishing serial connection 
     arduino = serial.Serial(ports[int(portChoisi) -1  ].device, baud,timeout=0.5)
     
-    print('Connexion a ' + arduino.name + ' a un baud rate de ' + str(baud))
+    print('Connection to ' + arduino.name + ' at ' + str(baud) + ' baud was succesful! ')
 
-    # si on reçoit un message, on l'affiche
+    # printing decoded data if received
     while True:
-        data = arduino.readline().decode('ascii').rstrip()
+        data = arduino.readline().decode('ascii').rstrip() 
         print(data)
       
-        
         
         if len(data) > 0:
 
             datasplit=data.split(' , ') 
-            if len(datasplit)==2 and (datasplit!=" " ):
+            if len(datasplit)==2 and (datasplit!=" " ):     # making sure the data is in the right format 
                 angle=int(datasplit[0])
                 distance=float(datasplit[1])
-                x=distance*math.cos(angle*(math.pi/180))
+                x=distance*math.cos(angle*(math.pi/180))    # calculating cartesian coordinates
                 y=distance*math.sin(angle*(math.pi/180))
             
                 B[angle][0]=x
                 B[angle][1]=y
-                if (angle==180 or angle==0):
+                if (angle==180 or angle==0):    #resesting the screen once a full scan has been made
                     screen.fill("black")
                     
                 #print (B)
@@ -76,6 +75,6 @@ if (len(ports) != 0): # at least one port was found
                 sys.exit()
 
             
-else: # on n'a pas trouvé de port actif
-    print("Aucun port actif n'a ete trouve")
+else: 
+    print("No active port was found")
 
