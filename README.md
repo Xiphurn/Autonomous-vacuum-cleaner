@@ -28,7 +28,7 @@ The main goal of this repostery is to show and follow the progress of the constr
   
 # Results:
 
-#3D printing
+# 3D printing
 
 # Next steps (no specific order)
 - Design the vacuum cleaner housing
