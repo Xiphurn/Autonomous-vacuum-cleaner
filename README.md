@@ -31,7 +31,7 @@ The main goal of this repostery is to show and follow the progress of the constr
 As we decided to use a stepper motor and a switch button (used to set the angle at 0), we had to create a mecanism to make the sensor press the switch. 
 For that purpose, we designed two piesces with Solidworks and printed it with a 3D printer. 
 
-![image](https://user-images.githubusercontent.com/90306651/171063021-10252cfd-1782-4e20-865a-fef87d306f5d.png)
+image align="center" ![image](https://user-images.githubusercontent.com/90306651/171063021-10252cfd-1782-4e20-865a-fef87d306f5d.png)
 
 ![image](https://user-images.githubusercontent.com/90306651/171063060-5dea7741-92d9-42bd-b3d6-0e473c63f916.png)
 
