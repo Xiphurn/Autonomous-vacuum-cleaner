@@ -49,6 +49,7 @@ The main goal of this repostery is to show and follow the progress of the constr
 - Work on the movement system
 - Work on the obstacle avoidance system
 - Auto scale pygame 
+- Process all the calculation on the python program to make all the process faster
 
 # Ideas to explore
 - Try to use an analog Hall Effect Sensor + magnet to define the stubborn instead of a pushbutton
