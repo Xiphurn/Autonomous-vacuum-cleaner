@@ -34,7 +34,7 @@ For that purpose, we designed two piesces with Solidworks and printed it with a 
 The first piece is a support for the Lidar sensor, supposed to hold the sensor and to fix it on the stepper motor.
 It features a tab on the right of the Lidar. It purpose is to put pressure on another tab on the motor support, and consequently press he button.
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/90306651/171063021-10252cfd-1782-4e20-865a-fef87d306f5d.png" />/p
+  <img src="https://user-images.githubusercontent.com/90306651/171063021-10252cfd-1782-4e20-865a-fef87d306f5d.png" /> <br/>
   Lidar support model (Solidworks)
 </p>
 
