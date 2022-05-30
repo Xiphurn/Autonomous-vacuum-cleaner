@@ -89,7 +89,7 @@ void loop()
   delay(100);
 
   
-  j=180;
+  //j=180;
   while (digitalRead(buttonApin) != LOW) //allows to send the data for each angle from 180 degrees to 0 degrees
     {
       myStepper.step(-6); //move the stepmotor by 1 degree in the other direction 
