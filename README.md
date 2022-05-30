@@ -34,6 +34,14 @@ The main goal of this repostery is to show and follow the progress of the constr
   
 # Results:
 
+![image](https://user-images.githubusercontent.com/90306651/171043274-94945094-7e0a-4613-8707-792434d4c4f3.png)
+
+
+
+
+
+
+
 # Next steps (no specific order)
 - Design the vacuum cleaner housing
 - Path finding algorithm 
