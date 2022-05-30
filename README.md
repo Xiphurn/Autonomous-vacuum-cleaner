@@ -26,7 +26,7 @@ The main goal of this repostery is to show and follow the progress of the constr
    ![equation](https://latex.codecogs.com/svg.image?x=&space;distance&space;*cos(\frac%7Bangle*\pi%7D%7B180%7D&space;))\
    ![equation](https://latex.codecogs.com/svg.image?y=&space;distance&space;*sin(\frac%7Bangle*\pi%7D%7B180%7D&space;))
    
-- 3D Printing
+## 3D Printing ##
 
 
   
