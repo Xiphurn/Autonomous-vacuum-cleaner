@@ -13,6 +13,7 @@ String donnees;
 int uart[9];  //save data measured by LiDAR
 const int HEADER = 0x59; //frame header of data package
 int k;
+int buttonApin = 4;
 
 
 float getdistance()  //Function that allows to get the measured distance from the LIDAR
@@ -53,15 +54,24 @@ void setup()
   Serial.begin(115200); //set bit rate of serial port connecting Arduino with computer
   Serial1.begin(115200);  //set bit rate of serial port connecting LiDAR with Arduino
   myStepper.setSpeed(9);  //set the motor speed
+  pinMode(buttonApin, INPUT_PULLUP); 
 }
 
 void loop()
 {
   
-  j=1;
-  while (j<181) //allows to send the data for each angle from 0 degrees to 180 degrees
+  while (digitalRead(buttonApin) != LOW)
+  {
+    
+    myStepper.step(-6);
+    
+  }  
+  
+
+  j=0;
+  while (j<180) //allows to send the data for each angle from 0 degrees to 180 degrees
     {
-    myStepper.step(5.688); //move the stepmotor by 1 degree
+    myStepper.step(6); //move the stepmotor by 1 degree
     somme = 0; //reset the sum value
     
     for (k=0 ; k<10 ; k++) ////adds 10 measurements to calculate the average later 
@@ -76,13 +86,13 @@ void loop()
     j = j + 1;
     }
     
-  delay(500);
+  delay(100);
 
   
-  j=179;
-  while (j>-1) //allows to send the data for each angle from 180 degrees to 0 degrees
+  j=180;
+  while (digitalRead(buttonApin) != LOW) //allows to send the data for each angle from 180 degrees to 0 degrees
     {
-      myStepper.step(-5.688); //move the stepmotor by 1 degree in the other direction 
+      myStepper.step(-6); //move the stepmotor by 1 degree in the other direction 
       somme = 0; //reset the sum value
       
       for (k=0 ; k<10 ; k++) //adds 10 measurements to calculate the average later 
@@ -97,7 +107,7 @@ void loop()
       j = j - 1; 
     }
     
-  delay(500);
+  delay(100);
 
   
 }
