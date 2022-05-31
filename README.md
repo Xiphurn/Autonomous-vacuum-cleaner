@@ -78,6 +78,6 @@ Here is an example of the results showed by the program and a picture of the rea
 - Process all the calculation on the python program to make all the process faster
 
 # Ideas to explore
-- Try to use an analog Hall Effect Sensor + magnet to define the stubborn instead of a pushbutton
+- Try to use an analog Hall Effect Sensor + magnet to define the stopper instead of a pushbutton
 - Try to use a DC motor instead of a stepper motor to achieve faster scans 
 - Create our own PCB with JLCPCB 
