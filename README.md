@@ -6,7 +6,7 @@ The main goal of this repostery is to show and follow the progress of the constr
 - Servo motor
 - Stepper motor 
 - TF Mini-S LIDAR sensor
-- Push button
+- Push swtch (button)
 - 3D printer (Ender 3)
 
 # Software that we use:
@@ -28,7 +28,7 @@ The main goal of this repostery is to show and follow the progress of the constr
  
 - 3D Printing :
 
-As we decided to use a stepper motor and a switch button (used to set the angle at 0), we had to create a mecanism to make the sensor press the switch. 
+As we decided to use a stepper motor and a push switch (used to set the angle at 0), we had to create a mecanism to make the sensor press the switch. 
 For that purpose, we designed two parts with Solidworks and 3D printed them. 
 
 The first part is a support for the Lidar sensor, the support is attached to the stepper motor and supposed to hold the sensor.
@@ -51,14 +51,14 @@ The Solidworks files have been saved as STL files, and have been printed by a 3d
   
 # Results:
 
-At the current state of work, the result of the mapping is showed on a pygame window with a dimension scale implemented in it. The position of the sensor is marked by a picture of a vacccum cleaner. The results are updated at each transit of the sensor. 
-Here is an example of the result showed by the program and a picture of the reel situation corresponding : 
+At the current state of work, the results of the mapping are showed on a pygame window with a dimension scale implemented in it. The position of the sensor is marked by a picture of a vacccum cleaner. The results are updated at each transit of the sensor. 
+Here is an example of the results showed by the program and a picture of the real corresponding situation : 
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/90306651/171043274-94945094-7e0a-4613-8707-792434d4c4f3.png" width: 30% /> <br/>
-  Result of a Lidar scan <br/>
+  Results of a Lidar scan <br/>
   <img src="https://user-images.githubusercontent.com/90306651/171064925-54427763-ccd2-4b88-a60e-32765c3acc53.jpg" /> <br/>
-  Picture corresponding to the result above
+  Picture corresponding to the situation
 </p>
 
 
