@@ -6,7 +6,7 @@ The main goal of this repostery is to show and follow the progress of the constr
 - Servo motor
 - Stepper motor 
 - TF Mini-S LIDAR sensor
-- Push swtch (button)
+- Push switch (button)
 - 3D printer (Ender 3)
 
 # Software that we use:
