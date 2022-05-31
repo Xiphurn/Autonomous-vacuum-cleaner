@@ -58,7 +58,7 @@ Here is an example of the result showed by the program and a picture of the reel
   <img src="https://user-images.githubusercontent.com/90306651/171043274-94945094-7e0a-4613-8707-792434d4c4f3.png" width: 30% /> <br/>
   Result of a Lidar scan <br/>
   <img src="https://user-images.githubusercontent.com/90306651/171064925-54427763-ccd2-4b88-a60e-32765c3acc53.jpg" /> <br/>
-  Picture corrsponding to the result above
+  Picture corresponding to the result above
 </p>
 
 
