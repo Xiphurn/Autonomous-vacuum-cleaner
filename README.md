@@ -32,7 +32,7 @@ As we decided to use a stepper motor and a push switch (used to set the angle at
 For that purpose, we designed two parts with Solidworks and 3D printed them. 
 
 The first part is a support for the Lidar sensor, the support is attached to the stepper motor and supposed to hold the sensor.
-It features a tab on the right side of the Lidar. It's purpose is to put pressure on another tab on the motor support, and consequently press the button.
+It features a tab on the right side of the Lidar. It's purpose is to put pressure on the other tab of the motor support, and consequently press the button.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/90306651/171063021-10252cfd-1782-4e20-865a-fef87d306f5d.png" /> <br/>
   Lidar support model (Solidworks)
