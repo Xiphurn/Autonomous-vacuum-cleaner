@@ -63,12 +63,6 @@ Here is an example of the results showed by the program and a picture of the rea
 </p>
 
 
-
-
-
-
-
-
 # Next steps (no specific order)
 - Design the vacuum cleaner housing
 - Path finding algorithm 
