@@ -38,7 +38,7 @@ It features a tab on the right side of the Lidar. It's purpose is to put pressur
   Lidar support model (Solidworks)
 </p>
 
-The second part is a support for the motor and it is supporting the switch and the tab who activates it.
+The second part is a support for the motor and it is also supporting the switch and the tab who activates it.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/90306651/171063060-5dea7741-92d9-42bd-b3d6-0e473c63f916.png" /> <br/>
