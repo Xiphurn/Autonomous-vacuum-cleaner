@@ -10,6 +10,7 @@ const unsigned long TIMEOUT = 100; // Timeout in milliseconds
 float lastValidDistance = -1;
 unsigned long lastReadTime = 0;
 int uart[9];  
+float distance;
 
 // Function to read distance from LiDAR
 float getDistance() {
@@ -77,15 +78,12 @@ void loop() {
   // Send data for each angle from 0 to 179 degrees
   while (angle < 180) {
     myStepper.step(6);  
-    float sum = 0;  
     
-    for (int i = 0; i < 2; i++) {  
-      sum += getDistance(); 
-    }
+    distance = getDistance(); 
     
     Serial.print(String(angle)); 
     Serial.print(" , ");  
-    Serial.println(String(sum / 2));  
+    Serial.println(String(distance));  
 
     angle++;
   }
@@ -93,15 +91,14 @@ void loop() {
   // Send data for each angle from 180 to 1 degrees
   while (angle > 0) {
     myStepper.step(-6); 
-    float sum = 0; 
     
-    for (int i = 0; i < 2; i++) { 
-      sum += getDistance(); 
-    }
+
+    distance = getDistance(); 
+
     
     Serial.print(String(angle)); 
     Serial.print(" , ");  
-    Serial.println(String(sum / 2)); 
+    Serial.println(String(distance)); 
 
     angle--; 
   }
