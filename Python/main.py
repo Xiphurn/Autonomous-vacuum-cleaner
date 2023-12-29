@@ -40,8 +40,8 @@ if (len(ports) != 0):   # at least one port was found
         print(str(ligne) + ' : ' + port.device)
         ligne = ligne + 1
 
-    portChoisi = 2
-    baud = 115200
+    portChoisi = 1
+    baud = 9600
 
     # Establishing serial connection 
     arduino = serial.Serial(ports[int(portChoisi) -1  ].device, baud,timeout=0.5)
