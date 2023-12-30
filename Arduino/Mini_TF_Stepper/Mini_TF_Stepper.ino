@@ -1,7 +1,7 @@
 #include <Stepper.h>
 #include <SoftwareSerial.h>  
 
-SoftwareSerial Serial1(2, 3); // RX on pin 2, TX on pin 3
+//SoftwareSerial Serial1(2, 3); // RX on pin 2, TX on pin 3
 const int STEPS_PER_REVOLUTION = 2048;
 Stepper myStepper(STEPS_PER_REVOLUTION, 8, 9, 10, 11);
 const int HEADER = 0x59;  
@@ -62,9 +62,9 @@ float getDistance() {
 }
 
 void setup() {
-  Serial.begin(9600);   
+  Serial.begin(115200);   
   Serial1.begin(115200); 
-  myStepper.setSpeed(9);  
+  myStepper.setSpeed(15);  
   pinMode(BUTTON_PIN, INPUT_PULLUP);  
 }
 
@@ -80,6 +80,7 @@ void loop() {
     myStepper.step(6);  
     
     distance = getDistance(); 
+    delay(10);
     
     Serial.print(String(angle)); 
     Serial.print(" , ");  
@@ -93,7 +94,8 @@ void loop() {
     myStepper.step(-6); 
     
 
-    distance = getDistance(); 
+    distance = getDistance();
+    delay(10); 
 
     
     Serial.print(String(angle)); 
