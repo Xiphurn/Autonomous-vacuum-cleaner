@@ -62,7 +62,7 @@ float getDistance() {
 }
 
 void setup() {
-  Serial.begin(115200);   
+  Serial.begin(2000000);   
   Serial1.begin(115200); 
   myStepper.setSpeed(15);  
   pinMode(BUTTON_PIN, INPUT_PULLUP);  
