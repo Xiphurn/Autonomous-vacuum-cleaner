@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from collections import deque
-import math
 from matplotlib.animation import FuncAnimation
 import serial
 
@@ -16,23 +15,19 @@ def get_lidar_data():
             if len(datasplit) == 2 and (datasplit != " "):
                 angle = int(datasplit[0])
                 distance = float(datasplit[1])
-                x = distance * math.cos(angle * (math.pi / 180))
-                y = distance * math.sin(angle * (math.pi / 180))
-                #print(x, y)
-                yield x, y
+                yield angle, distance
 
 def plot_lidar_data():
     fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
     scatter = ax.scatter([], [], c='blue', s=5)
-    # ax.set_ylim(0, 1)  # Remove static limit
 
     # Using deque as a circular buffer
-    data_buffer = deque(maxlen=360)
+    data_buffer = deque(maxlen=180)
     
     # Update function for the animation
     def update(frame):
         data_buffer.append(frame)
-        theta, r = zip(*[(np.arctan2(y, x), np.sqrt(x**2 + y**2)) for x, y in data_buffer])
+        theta, r = zip(*[(np.radians(angle), distance) for angle, distance in data_buffer])
         
         # Update scatter plot data
         scatter.set_offsets(np.column_stack([theta, r]))
